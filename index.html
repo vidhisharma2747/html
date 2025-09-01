@@ -1,131 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Attractive Basic HTML Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhi Sharma | Resume</title>
   <style>
-    /* Reset some default styles */
-    * {
-      box-sizing: border-box;
+    /* General Styles */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    nav {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #fff;
-      color: #2575fc;
-      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
-    }
-
-    main {
-      flex: 1;
-      padding: 2rem 3rem;
-      max-width: 900px;
-      margin: 2rem auto;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-    }
-
-    main h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.5rem;
-    }
-
-    main p {
-      font-size: 1.1rem;
+      background: #f4f6f9;
+      color: #333;
       line-height: 1.6;
-      margin-bottom: 1.5rem;
     }
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.4);
+    header {
       text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    header p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 30px auto;
     }
 
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem 1.5rem;
-        margin: 1rem;
-      }
+    /* Section Styles */
+    .section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .section h2 {
+      margin-top: 0;
+      color: #2c3e50;
+      border-left: 5px solid #4ca1af;
+      padding-left: 10px;
+      font-size: 1.4rem;
+    }
 
-      header h1 {
-        font-size: 1.8rem;
-      }
+    /* Lists */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔ ";
+      color: #4ca1af;
+    }
 
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Contact Info Styling */
+    .contact {
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+    .contact a {
+      color: #ffeaa7;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>My Attractive Page</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Vidhi Sharma</h1>
+    <p class="contact">
+      📞 (+91) 9650997170 | ✉️ <a href="mailto:vidhisharma2747@gmail.com">vidhisharma2747@gmail.com</a> | 🌐 
+      <a href="https://www.linkedin.com/in/vidhi-sharma-2389a3328/" target="_blank">linkedIn|Vidhi Sharma</a>
+    </p>
   </header>
 
-  <main>
-    <section id="home">
-      <h2>Welcome to My Page</h2>
-      <p>This is a simple and clean HTML page with some stylish touches to make it look attractive. The gradient background and semi-transparent content areas add a modern feel.</p>
-      <p>Resize your browser to see how the layout adjusts for smaller screens!</p>
+  <!-- Content -->
+  <div class="container">
+    <section class="section">
+      <h2>Summary</h2>
+      <p>Currently MBA aspirant, pursuing the master's degree from ABVSME, JNU. Result driven with creative mindset and seeking a position to contribute in organization's interest and growth.</p>
     </section>
-  </main>
 
-  <footer>
-    &copy; 2025 My Attractive Page. All rights reserved.
-  </footer>
+    <section class="section">
+      <h2>Education</h2>
+      <p><strong>Masters of Business Administration</strong><br>
+      ABVSME, JNU, 2024 - 2026</p>
+  
+      <p><strong>Bachelors of Business Administration</strong><br>
+      TIAS, GGSIPU, 2020 - 2023</p>
+    </section>
+
+    <section class="section">
+      <h2>Experience</h2>
+      <p><strong>Web Developer Intern</strong> – ABC Company (Summer 2023)</p>
+      <ul>
+        <li>Built responsive webpages using HTML, CSS, and JavaScript</li>
+        <li>Collaborated with designers to improve user experience</li>
+        <li>Optimized website speed and SEO performance</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Responsive Web Design</li>
+        <li>Version Control (Git/GitHub)</li>
+        <li>Problem Solving & Debugging</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+      <p><strong>Portfolio Website:</strong> Designed and developed a personal website to showcase projects and resume with animations and responsive design.</p>
+    </section>
+  </div>
 </body>
 </html>
+
