@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhi Sharma | Art Marketplace</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #2c3e50;
+      padding: 15px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h2 { margin: 0; }
+    nav a, nav button {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav a:hover, nav button:hover { text-decoration: underline; }
+    /* Header */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: #ffe6e6;
+      color: #2c3e50;
+    }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    header p { font-style: italic; margin-top: 10px; }
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+    .card:hover img { opacity: 0.4; }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s;
+      background: rgba(0,0,0,0.5);
+    }
+    .card:hover .overlay { opacity: 1; }
+    .overlay h3, .overlay p { margin: 4px 0; }
+    .price { color: #f1c40f; font-weight: bold; }
+    /* Upload */
+    .upload-section {
+      background: white;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .upload-section h2 { text-align: center; }
+    .upload-section form { display: flex; flex-direction: column; gap: 10px; }
+    .upload-section input, .upload-section textarea, .upload-section button {
+      padding: 10px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    .upload-section button {
+      background: #27ae60; color: white; border: none; cursor: pointer;
+    }
+    .upload-section button:hover { background: #219150; }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 20px;
+    }
+    footer a { color: #f1c40f; text-decoration: none; }
+    /* Modal */
+    .modal {
+      display: none; position: fixed; left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: white; padding: 20px; border-radius: 8px;
+      width: 300px; text-align: center;
+    }
+    .modal-content input {
+      width: 100%; margin: 8px 0; padding: 8px;
+    }
+    .modal-content button {
+      width: 100%; padding: 10px; margin-top: 8px;
+      border: none; border-radius: 5px; cursor: pointer;
+    }
+    .login-btn { background: #27ae60; color: white; }
+    .signup-btn { background: #2980b9; color: white; }
+    .close { float: right; cursor: pointer; color: #555; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>Vidhi’s Gallery</h2>
+    <div>
+      <a href="#gallery">Gallery</a>
+      <a href="#upload">Upload</a>
+      <button onclick="openModal()">Login</button>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Welcome to Vidhi Sharma’s Art Marketplace 🎨</h1>
+    <p>“Every artwork tells a story – own one today.”</p>
+  </header>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <div class="card">
+      <img src="https://picsum.photos/400/300?random=201" alt="Artwork 1">
+      <div class="overlay"><h3>Colors of Monsoon</h3><p>by Aditi Sharma (Acrylic)</p><p class="price">₹12,000</p></div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/300?random=202" alt="Artwork 2">
+      <div class="overlay"><h3>Serenity in Charcoal</h3><p>by Rahul Mehta (Charcoal)</p><p class="price">₹7,500</p></div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/300?random=203" alt="Artwork 3">
+      <div class="overlay"><h3>Golden Horizon</h3><p>by Kavya Iyer (Oil)</p><p class="price">₹15,000</p></div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/300?random=204" alt="Artwork 4">
+      <div class="overlay"><h3>Knife Strokes</h3><p>by Arjun Verma (Knife Painting)</p><p class="price">₹10,000</p></div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/300?random=205" alt="Artwork 5">
+      <div class="overlay"><h3>Whispers of Nature</h3><p>by Sneha Kapoor (Pencil/Watercolor)</p><p class="price">₹8,000</p></div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/300?random=206" alt="Artwork 6">
+      <div class="overlay"><h3>Abstract Vibrance</h3><p>by Manish Gupta (Acrylic)</p><p class="price">₹11,500</p></div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section id="upload" class="upload-section">
+    <h2>Upload Your Artwork</h2>
+    <form>
+      <input type="file" accept="image/*" required>
+      <input type="text" placeholder="Artwork Title" required>
+      <textarea rows="3" placeholder="Artwork Description"></textarea>
+      <input type="number" placeholder="Price (₹)" required>
+      <button type="submit">Upload Artwork</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vidhi Sharma | Connect on 
+      <a href="https://www.linkedin.com/in/vidhi-sharma-2389a3328" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Login / Sign Up</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Sign Up</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("loginModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("loginModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
